@@ -29,11 +29,11 @@ void setup()
       numw++;
     } 
   }
-  println(numw);
   fill(255);
   if(numw == 0)
   {
     text("You Win!!",120,130);
+    text("Press Space to Restart",85,150);
   }
   text("Number of Snowflakes Left: " + (numw),50,20);
  }  
@@ -74,9 +74,12 @@ class Snowflake
   }
   void lookDown()
   {
-    if(get(sx,sy+3) == color(0))
+    if(sy > 246)
     {
-      colour = 127;
+      if(get(sx,sy+3) == color(0))
+      {
+        colour = 127;
+      }
     }
   }
   void move()
